@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: linear-gradient(180deg, #193c72 10%, #af6c5a 100%);
+  background-image: linear-gradient(120deg, #1e5ab3 30%, #43a043 100%);
   color: white;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
@@ -15,14 +15,16 @@ header {
   font-size: 2rem;
 }
 
-header, form {
+header,
+form {
   min-height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-form input, form button {
+form input {
+  min-width: 40%;
   padding: 0.5rem;
   font-size: 2rem;
   border: none;
@@ -30,10 +32,15 @@ form input, form button {
 }
 
 form button {
+  min-width: 5%;
   color: #ff6f47;
   background: #f7fffe;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
 }
 
 form button:hover {
@@ -48,7 +55,7 @@ form button:hover {
 }
 
 .todo-list {
-  min-width: 30%;
+  min-width: 45%;
   list-style: none;
 }
 
@@ -71,8 +78,8 @@ form button:hover {
   flex: 1;
 }
 
-.trash-btn, .complete-btn {
-  background: #ff6f47;
+.trash-btn,
+.complete-btn {
   color: white;
   border: none;
   padding: 1rem;
@@ -80,8 +87,12 @@ form button:hover {
   font-size: 1rem;
 }
 
+.trash-btn {
+  background: #ff6f47;
+}
+
 .complete-btn {
-  background: rgb(11, 212, 162);
+  background: #43a043;
 }
 
 .todo-item {
@@ -101,42 +112,4 @@ form button:hover {
 .completed {
   text-decoration: line-through;
   opacity: 0.5;
-}
-
-/*CUSTOM SELECTOR */
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  outline: 0;
-  box-shadow: none;
-  border: 0 !important;
-  background-image: none;
-}
-
-/* Custom Select */
-.select {
-  margin: 1rem;
-  position: relative;
-  overflow: hidden;
-}
-
-select {
-  color: #ff6f47;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-  width: 12rem;
-}
-
-/* Arrow */
-.select::after {
-  content: "\25BC";
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1rem;
-  background: #ff6f47;
-  cursor: pointer;
-  pointer-events: none;
 }
