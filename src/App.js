@@ -4,7 +4,7 @@ import TodoList from './components/TodoList'
 import './App.css';
 
 const App = () => {
-
+  // state with all todo objects created
   const [todos, setTodos] = useState([]);
 
   return (
@@ -13,9 +13,9 @@ const App = () => {
         <h1>TODO APP</h1>
       </header>
       <TodoForm todos={todos} setTodos={setTodos}/>
-
+      <TodoList todos={todos}/>
     </div>
   );
-}
+};
 
 export default App;

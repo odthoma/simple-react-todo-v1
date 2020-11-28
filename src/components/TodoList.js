@@ -1,13 +1,17 @@
 import React from 'react'
-import TodoForm from './TodoForm'
+import Todo from './Todo'
 
 
-const TodoList = () => {
+const TodoList = (props) => {
     return (
-        <div>
-            
+        <div className="todo-container">
+            <ul className="todo-list">
+                {props.todos.map((todo) => (
+                    <Todo text={todo.text} id={todo.id}/>
+                ))}
+            </ul>
         </div>
     );
-}
+};
 
 export default TodoList;
