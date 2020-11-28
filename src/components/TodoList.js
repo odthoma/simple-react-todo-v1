@@ -3,8 +3,6 @@ import TodoForm from './TodoForm'
 
 
 const TodoList = () => {
-    const [todos, setTodos] = useState([]);
-
     return (
         <div>
             

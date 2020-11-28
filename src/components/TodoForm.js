@@ -2,13 +2,27 @@ import React, { useState } from "react";
 
 const TodoForm = (props) => {
 
-    const handleInput = (e) => {
-        props.setInput(e.target.value);
+    // state that updates onChange of form input
+    const [input, setInput] = useState("");
+
+    const handleSubmit = (e) => {
+        // prevents page refresh
+        e.preventDefault();
+
+        // ID of each todo is set randomly for preventing errors
+        props.setTodos([...props.todos, {
+            id: Math.floor(Math.random()*1000),
+            text: input,
+            completed: false
+        }]);
+
+        // sets state back to initial state and clears the textField
+        setInput("");
     };
 
     return (
-        <form onSubmit={(ev) => ev.preventDefault}>
-            <input type="text" className="todo-input" placeholder="add a todo..." onChange={handleInput}/>
+        <form onSubmit={handleSubmit}>
+            <input value={input} type="text" className="todo-input" placeholder="add a todo..." onChange={(e) => setInput(e.target.value)}/>
             <button className="todo-button" type="submit">
                 <i className="fas fa-plus-square"/>
             </button>
@@ -21,6 +35,6 @@ const TodoForm = (props) => {
             </div>
         </form>
     ); 
-}
+};
 
 export default TodoForm;
